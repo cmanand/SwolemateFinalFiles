@@ -1,0 +1,111 @@
+
+html, body {
+    height: 100%;
+}
+
+
+.header {
+ display:block;
+ background-color: #00BCD4;
+ height:20%;
+ width:100%;
+ margin:0px auto;
+ 
+}
+
+.toplogo
+{
+  margin:3px 0px 0px 30px;
+  height:110px;
+  width:110px;
+  display: block;
+  float:left;
+  
+}
+
+.member
+{
+margin:45px 20px 0px 0px;
+font-family: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+display: block;
+font-size:130%;
+color:white;
+float:right;
+}
+
+.login
+{
+  margin:38px 50px 0px 0px;
+  float:right;
+  height:40px;
+  width:150px;
+  border: 1px solid black;
+}
+
+.didot
+{
+  font-family: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+  text-align: center;
+}
+
+.container{
+    display: table;
+      padding-top: 15px;
+  padding-bottom: 0px;
+  height:70%;
+  width:100%;
+}
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#signup-panel{
+  max-width: 500;
+}
+
+
+
+.footer
+{
+  height:10%;
+   width:100%;
+   background-color: #00BCD4;
+  
+
+}

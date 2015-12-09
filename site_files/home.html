@@ -1,0 +1,212 @@
+<html>
+<head>
+
+	 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	 <script src="jquery-1.11.3.min.js"></script>
+	<style type="text/css">
+	@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+/*hexcode for all button colors #ff5252*/
+.header {
+ display:block;
+ background-color: #00bcd4;
+ height:20%;
+ width:100%;
+ margin:0px auto;
+ border:1px solid black;
+
+}
+
+
+.content
+{
+	height:70%;
+	width:100%;
+	/*idea is we can have a random picture in the homePictures file come up everytime we pull up the page
+	TODO: implement this*/
+	background-image:url("./homePictures/beachrun.jpg");
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+	border: 1px solid black;
+	
+}
+
+.phrase
+{
+	opacity: 0.8;
+	margin:80px 0px 20px 50px;
+	display: block;
+}
+
+.fullLogo
+{
+	margin:0px 0px 0px 170px;
+	opacity: 0.8;
+	height:130px;
+	width:480px;
+	display: block;
+}
+
+.getstarted
+{
+	margin:20px 50px 0px 315px;
+	height:50px;
+	width:170px;
+	background-color:#ff5252;
+	color:white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 170%;
+	
+}
+
+.toplogo
+{
+	margin:3px 0px 0px 30px;
+	height:110px;
+	width:110px;
+	display: block;
+	float:left;
+	
+}
+
+.member
+{
+margin:45px 20px 0px 0px;
+font-family: 'Montserrat', sans-serif;
+display: block;
+font-size:130%;
+color:white;
+float:right;
+}
+
+.login
+{
+	margin:38px 50px 0px 0px;
+	float:right;
+	height:50px;
+	width:170px;
+	background-color:#ff5252;
+	color:white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 170%;
+}
+
+.footer
+{
+	height:10%;
+	 width:100%;
+	 background-color: #00bcd4;
+	 border: 1px solid black;
+
+}
+
+.bottomWords
+{
+margin:20px 20px 0px 0px;
+font-family: 'Montserrat', sans-serif;
+font-size:110%;
+text-decoration: bold;
+color:white;
+float:right;
+}
+
+#inputUsername
+{
+	color:black;
+	margin-right: 5px;
+}
+
+#inputPassword
+{
+	color:black;
+}
+
+
+	</style>
+
+	<script type="text/javascript">
+		if(localStorage.getItem("username") != null) {
+		        	window.location = "/dashboard.html";
+		        }
+
+$(document).ready(function() {
+
+	 $(document).ajaxError(function() {
+	    alert("Sorry, there was a problem!");
+	  });
+var counter = 0;
+
+$("#login").click(function() {
+if(counter==0)
+{
+	var temp = '<input type="username" id="inputUsername"  placeholder="Username" required autofocus><input type="password" id="inputPassword" placeholder="Password" required>';
+document.getElementById("member").innerHTML = temp;
+counter++;
+}
+else{
+   $.ajax({
+	      // The URL for the request -- note the simple REST API!
+	      // all URLs are relative to http://localhost:1111/
+	      url: "dashboard/" + $("#inputUsername").val(),
+	      type: "POST",
+	      dataType : "text", // this URL returns a plain text string, not JSON
+	      data : { 	username: $("#inputUsername").val(),
+	      			password: $("#inputPassword").val()
+	             },
+	      success: function( data ) {
+	        console.log("You received some data!", data);
+	         if (data == 'OK') {
+	          window.location= "/dashboard.html";
+	       	localStorage.setItem("username", $("#inputUsername").val());
+	      	localStorage.setItem("password", $("#inputPassword").val());
+	       
+	        }  else {
+	          $("#status").html("Error: could not sign in user!");
+	        }
+	      },
+	});
+}
+
+
+
+});
+
+	  });
+
+	</script>
+
+</head>
+
+<body>
+<div class="header">
+	<a href="/home.html">
+	<img class = "toplogo" src="./icon/SwoleMateIcon.png"/>
+	</a>
+	<!-- <a href="/login.html"> -->
+	<div id = "buttonjunk"><input class = "login btn btn-default" type="button" id = "login"  value="Login"/></div>
+	<!-- </a> -->
+	<div class="member" id="member">Already a member?</div>
+	
+</div>
+<div class="content">
+	<img class = "phrase" src="./icon/phrase.png"/>
+	<img class = "fulllogo" src="./icon/fullLogo.png"/>
+	<a href="/signup.html">
+	<input class = "getstarted btn btn-default" type="button" value="Get Started"/>
+	</a>
+</div>
+<div class="footer">
+<a class="bottomWords" href="/about.html">ABOUT US</a>
+<a class="bottomWords" href="/contact.html">CONTACT US</a>
+
+</div>
+
+
+</body>
+
+
+
+
+
+
+</html>

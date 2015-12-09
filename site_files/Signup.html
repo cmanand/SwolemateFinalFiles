@@ -1,0 +1,148 @@
+<!-- TODO: There's padding or magins for one of the fields on the form. Look into and make them all evenly spaced. -->
+
+<html lang="en">
+	
+	<head>
+
+		<meta charset="utf-8">
+   		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Create an Account for SwoleMate</title>
+
+
+	 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+		<link href="signup.css" rel="stylesheet"> 
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+
+<style>
+.login
+{
+	margin:38px 50px 0px 0px;
+	float:right;
+	height:50px;
+	width:170px;
+	background-color:#ff5252;
+	color:white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 170%;
+}
+</style>
+
+    <script type="text/javascript">
+	$(document).ready(function() {
+
+		if(localStorage.getItem("password") != undefined&&localStorage.getItem("username") != undefined&&localStorage.getItem("password") != null&&localStorage.getItem("username") != null) {
+		   	window.location = "/dashboard.html";
+		}
+
+		 $("#login").click(function() {
+          window.location = "./home.html";
+        });
+
+	  // define a generic Ajax error handler:
+	  // http://api.jquery.com/ajaxerror/
+	  $(document).ajaxError(function() {
+	    alert("Sorry, there was a problem!");
+	  });
+
+	  $("#createButton").click(function() {
+	    $.ajax({
+	      // The URL for the request -- note the simple REST API!
+	      // all URLs are relative to http://localhost:3000/
+	      url: "users/",
+	      type: "POST",
+	      dataType : "text", // this URL returns a plain text string, not JSON
+	      data : { password: $("#inputPassword").val(),
+	               email: $("#inputEmail").val(),
+	               username: $("#inputUsername").val(),
+	               firstname: $("#inputFirstName").val(),
+	               // lastname: $("#inputlastName").val()
+	             },
+	      success: function( data ) {
+	        console.log("You received some data!" , data);
+	        if (data == 'OK') {
+	        	localStorage.setItem("password", $("#inputPassword").val());
+	      		localStorage.setItem("username", $("#inputUsername").val());
+	          window.location = "./dashboard.html";
+
+	        } else {
+	        	console.log(data);
+	          $("#status").html("Error: could not create a new user!");
+	        }
+	      },
+	    });
+	  });
+	});
+
+
+	</script>
+
+	</head>
+
+	<body >
+	<div class="header">
+	<a href="/home.html">
+<img class = "toplogo" src="./icon/SwoleMateIcon.png"/>
+</a>
+<div id = "buttonjunk"><input class = "login btn btn-default" type="button" id = "login"  value="Login"/></div>
+	<!-- </a> -->
+	<p class="member">Already a member?</p></div> <!--/header-->
+	<div class="container">
+
+		<div class="row vertical-center-row">
+        <div class="text-center col-md-4 col-md-offset-4">
+
+		<!-- Adapted from sign in template form Bootstrap's example page -->
+
+		<div class="panel panel-default" id="signup-panel">
+  			<div class="panel-body" id="panel-bg">
+	   
+			 <div class="form-signin"> 
+		        <h2 class="form-signin-heading">Sign Up</h2>
+
+		        <label for="inputEmail" class="sr-only">enter your email address</label>
+		        <input type="email" maxlength="30" id="inputEmail" class="form-control" placeholder="Email Address" required autofocus>
+		        
+		        <br>
+		        <label for="inputPassword"  class="sr-only">enter your password</label>
+		        <input type="password" maxlength="20" id="inputPassword" class="form-control" placeholder="Password" required>
+
+		
+		        <label for="inputUsername" class="sr-only">enter your username</label>
+		        <input type="text" maxlength="20" id="inputUsername" class="form-control" placeholder="Username" required>
+		        <br>
+		        <label for="inputFirstName"  class="sr-only">enter your first name</label>
+		        <input type="text" maxlength="15" id="inputFirstName" class="form-control" placeholder="First Name" required>
+		     
+				<br>
+		    
+		      <!--   <label for="inputlastName" class="sr-only">enter your last name</label>
+		        <input type="text" id="inputlastName" class="form-control" placeholder="Last Name" required>
+		        <br> -->
+
+		       <button class="btn btn-lg btn-primary btn-block" type="submit" id="createButton">Create New Account</button>
+		    </div> 
+		    
+		    </div>
+		</div>
+
+		</div>
+		</div>
+
+	    </div> <!-- /container -->
+	    <div id="status"></div>
+	    <div class="footer"></div>
+	
+	</body>
+</html>

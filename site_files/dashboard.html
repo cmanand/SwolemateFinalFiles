@@ -1,0 +1,329 @@
+<!-- TODO: Didot isn't working as a class. Needs fixed.-->
+<!-- Plan: All items will be on this page, and their opacity will change depending on which option in the toolbar to the left is chosen -->
+
+
+<html>
+<head>
+
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SwoleMate Homepage</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Custom CSS 
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- chart.js -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script type="text/javascript">
+       var doughnutData = [
+                {
+                    value: 5,
+                    color:"#185a37",
+                    highlight: "#2e8557",
+                    label: "Dominick"
+                },
+                {
+                    value: 10,
+                    color: "#46BFBD",
+                    highlight: "#5AD3D1",
+                    label: "Caroline"
+                },
+                {
+                    value: 2,
+                    color: "#83adb5",
+                    highlight: "#b4cdd2",
+                    label: "Alane"
+                },
+                {
+                    value: 3,
+                    color: "#853ac5",
+                    highlight: "#865aa5",
+                    label: "Jeff"
+                }
+            ];      
+
+        $(document).ready(function() {
+            $("#logoutButton").click(function()
+{
+localStorage.removeItem("username");
+localStorage.removeItem("password");
+window.location="./home.html";
+});
+
+ $("#improveMatches").click(function() {
+          window.location = "./survey.html";
+        });
+
+ $("#updateProfile").click(function() {
+          window.location = "./dashboard.html";
+        });
+
+
+ $("#viewMatches").click(function() {
+          window.location = "./matches.html";
+        });
+                
+                var ctx = document.getElementById("chart-area").getContext("2d");
+                window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
+
+
+        });
+
+
+      var ctx = $("#myChart").get(0).getContext("2d");
+           
+      function addpoints(x){
+        var points = myDoughnut.getSegmentsAtEvent(x);
+        myDoughnut.segments[0].value=points+1;
+        myDoughnut.update();
+      }
+
+    </script>
+
+
+
+    <style type="text/css">
+
+.toplogo
+{
+    margin:3px 0px 0px 550px;
+    height:110px;
+    width:110px;
+    display: block;
+    float:left;
+    
+}
+
+.navigation{
+    display: inline-block;
+    vertical-align: middle;
+    float:none;
+}
+
+.member
+{
+margin:45px 20px 0px 0px;
+font-family: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+display: block;
+font-size:130%;
+color:white;
+float:right;
+}
+
+.login
+{
+    margin:38px 50px 0px 0px;
+    float:right;
+    height:40px;
+    width:150px;
+    border: 1px solid black;
+}
+
+
+
+.didot
+{
+    font-family: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+    
+}
+
+.menu
+{
+    float:left;
+    width:20%;
+    font-size:130%;
+    padding-top: 20px;
+}
+
+td
+{
+    border: 1px solid black;
+    font-family: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+}
+
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 0;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color:  #00bcd4;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #000 !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    color: #999;
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+.logo,.profile{
+  vertical-align: middle;
+  margin: 0 40px;
+}
+
+body {
+    margin-top:20;
+}
+
+</style>
+
+</head>
+<body>
+
+    
+<div class="content">
+
+<div class="row">
+  <div class="col-md-2">
+      <div class="collapse navbar-collapse navbar-ex1-collapse navigation">
+                <ul class="nav navbar-nav side-nav navigation">
+                    
+                     <li>
+                        
+                        <img class="img-circle profile" border="0" src="./icon/gymprofile.jpg" width="180" height="180" id="profilePic">
+                        
+                    </li>
+
+                    <li>
+                        <a href="#" style="color: white" id="updateProfile"><i class="fa fa-fw fa-dashboard"></i> Update Your Profile</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: white" id="improveMatches"><i class="fa fa-fw fa-bar-chart-o"></i> Improve Your Matches</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: white" id="viewMatches"><i class="fa fa-fw fa-table"></i> View Your Matches</a>
+                    </li>
+                     <li>
+                        <a href="\messageboards.html" style="color:white"><i class="fa fa-fw fa-table"></i> Message Boards</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: white" id="logoutButton"><i class="fa fa-fw fa-table"></i> Logout</a>
+                    </li>
+                
+                    <li>
+                        
+                        <img class="logo" border="0" src="./icon/SwoleMateIcon.png" width="100" height="100" id="homeButton">
+                        
+                    </li>
+                    
+                </ul>
+
+            </div>
+  </div>
+
+  <div class="col-md-3">
+
+  <h2 class="text-center">Welcome back!</h2>
+  <h3 class="text-center">Who did you exercise with today?</h3>
+  
+  <div id="exerciseChart">
+            <canvas id="chart-area" width="200" height="200"/>
+        </div>
+       
+  <br>
+  
+          <div class="updateChart text-center">
+             <p class="text-center">
+               Today I exercised with:
+             </p>
+            
+            <input class="btn btn-default" type="button" value="Dominic" onclick="addpoints('name1');" id="name1"> 
+
+            <input class="btn btn-default" type="button" value="Caroline" id="name2"> 
+
+            <input class="btn btn-default " type="button" value="Jeff" id="name3"> 
+
+            <input class="btn btn-default" type="button" value="Alane" id="name4"> 
+        </div>        
+
+  </div>
+
+  <div class="col-md-7">
+  <div class="square">
+          <div class="col-md-6">
+                <div class="panel panel-default">
+                  
+                  <div class="panel-body">
+                    <img class="img-circle center-block" src="./icon/gymprofile.png" id="friend1" height="200" weight="200"></img>
+                    <p class="text-center" id="name1">Dominick</p>
+                    <p class="text-center" id="activities">Running, Biking, Yoga, Streching, Hiking, Weight Lifting, Fitness Class</p>
+                </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                  <img class="img-circle center-block" src="./icon/gymprofile.png" id="friend2" height="200" weight="200"></img>
+                   <p class="text-center" id="name2">Caroline</p>
+                    <p class="text-center" id="activities">Running, Biking, Yoga, Streching, Hiking, Weight Lifting, Fitness Class</p>
+                </div>
+                </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-body">
+              <img class="img-circle center-block" src="./icon/gymprofile.png" id="friend3" height="200" weight="200"></img>
+               <p class="text-center" id="name3">Jeff</p>
+                    <p class="text-center" id="activities">Running, Biking, Yoga, Streching, Hiking, Weight Lifting, Fitness Class</p>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                  <div class="panel-body">
+                  <img class="img-circle center-block" src="./icon/gymprofile.png" id="friend4" height="200" weight="200"></img>
+                   <p class="text-center" id="name4">Alane</p>
+                    <p class="text-center" id="activities">Running, Biking, Yoga, Streching, Hiking, Weight Lifting, Fitness Class</p>
+                </div>
+                </div>
+        </div>
+  </div>
+
+</div> <!--/content-->
+
+    </body>
+    </html>
+

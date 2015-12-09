@@ -1,0 +1,355 @@
+<!-- TODO: Didot isn't working as a class. Needs fixed.-->
+<!-- Plan: All items will be on this page, and their opacity will change depending on which option in the toolbar to the left is chosen -->
+
+
+<html>
+<head>
+
+<meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SwoleMate Homepage</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Custom CSS 
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- chart.js -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+
+    <script type="text/javascript">
+    // info holds all of the user's data
+   
+$(document).ready(function() {
+   var user;
+   var info = [];
+
+  $(document).ajaxError(function() {
+    alert("Sorry, there was a problem!");
+  }); //end ajax error check
+
+
+  $("#logoutButton").click(function()
+{
+localStorage.removeItem("username");
+localStorage.removeItem("password");
+window.location="./home.html";
+});//end logout
+
+ $("#improveMatches").click(function() {
+          window.location = "./survey.html";
+        });
+$("#viewMatches").click(function() {
+          window.location = "./matches.html";
+        });
+
+$("#updateProfile").click(function() {
+          window.location = "./dashboard.html";
+        });
+
+      $.ajax({
+      url: "/matches/",
+      type: "POST",
+      dataType : "json", 
+      data : {
+        username: localStorage.getItem('username')
+      }, //end data
+      success: function( data ) {
+        console.log("You received some data!", data);
+        // placeUsernames(data.usernames);
+        var i;
+        var list = document.getElementById('matchList');
+        list.innerHTML ="";
+        for(i = 0; i < data.usernames.length; i++){
+        //   if(i%2==0)
+        //   {
+        //   var newRow = document.createElement('div');
+        //   newRow.className='col-md-6';
+        //   list.appendChild(newRow);
+        // } //end if
+         var panel = document.createElement('div');
+         panel.className = "panel panel-default"
+          list.appendChild(panel);
+         var panelbody = document.createElement('div');
+         panelbody.className = 'panel-body';
+         list.appendChild(panelbody);
+
+          var pic = document.createElement('img');
+          pic.src = "./icon/gymprofile.png";
+          pic.id = "friend";
+          pic.height = "200";
+          pic.weight = "200";
+          pic.className = "img-circle center-block";
+           list.appendChild(pic);
+
+          var name = document.createElement('p');
+          name.id = "name";
+          name.className = "text-center";
+          name.innerHTML = data.usernames[i];
+          list.appendChild(name);
+
+          var activities = document.createElement('p');
+          activities.id = "activities";
+          activities.className = "text-center";
+          activities.innerHTML = "Activities: N/A";
+          list.appendChild(activities);
+
+          var time = document.createElement('p');
+          time.id = "time";
+          time.className = "text-center";
+         time.innerHTML = "Times: N/A";
+         list.appendChild(time);
+          
+        } //end for
+      
+              
+  }//end function
+
+  }); //end ajax
+
+ }); //end ready
+
+
+// function placeUsernames(username)
+//     {
+//       console.log("HI");
+//  if(username.length>=1)
+//       {
+//       var a = username[0];
+//         document.getElementById("name1").innerHTML=a;
+//       }
+//       if(username.length>1)
+//       {
+//       var b = username[1];
+//     document.getElementById("name2").innerHTML=b;
+//   }
+//       if(username.length>2)
+//       {
+//       var c = username[2];
+//     document.getElementById("name3").innerHTML=c;
+//   }
+//      if(username.length>3)
+//       {
+//       var d = username[3];
+//     document.getElementById("name4").innerHTML=d;
+//   }
+//     }
+
+</script>
+
+    <style type="text/css">
+
+.toplogo
+{
+    margin:3px 0px 0px 550px;
+    height:110px;
+    width:110px;
+    display: block;
+    float:left;
+    
+}
+
+.member
+{
+margin:45px 20px 0px 0px;
+font-family: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+display: block;
+font-size:130%;
+color:white;
+float:right;
+}
+
+.login
+{
+    margin:38px 50px 0px 0px;
+    float:right;
+    height:40px;
+    width:150px;
+    border: 1px solid black;
+}
+
+
+
+.didot
+{
+    font-family: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+    
+}
+
+.menu
+{
+    float:left;
+    width:20%;
+    font-size:130%;
+    padding-top: 20px;
+}
+
+td
+{
+    border: 1px solid black;
+    font-family: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+}
+
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 0;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color:  #00bcd4;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #000 !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    color: #999;
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+.logo{
+  vertical-align: middle;
+  margin: 0 40px;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div class="content">
+
+<div class="row">
+  <div class="col-md-2">
+      <div class="collapse navbar-collapse navbar-ex1-collapse navigation">
+                <ul class="nav navbar-nav side-nav navigation">
+                    
+                     <li>
+                        
+                        <img class="img-circle profile" border="0" src="./icon/gymprofile.jpg" width="180" height="180" id="profilePic">
+                        
+                    </li>
+
+
+                    <li>
+                        <a href="#" style="color: white" id="updateProfile"><i class="fa fa-fw fa-dashboard"></i> View Your Profile</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: white" id="improveMatches"><i class="fa fa-fw fa-bar-chart-o"></i> Improve Your Matches</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: white" id="viewMatches"><i class="fa fa-fw fa-table"></i> View Your Matches</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: white" id="logoutButton"><i class="fa fa-fw fa-table"></i> Logout</a>
+                    </li>
+                
+                    <li>
+                        
+                        <img class="logo" border="0" src="./icon/SwoleMateIcon.png" width="100" height="100" id="homeButton">
+                        
+                    </li>
+                    
+                </ul>
+
+            </div>
+  </div>
+
+  <div class="col-md-10 text-center">
+
+    <h1>View Your Matches</h1>
+
+  <div class="square">
+    <div id="matchList"></div>
+          <!-- <div class="col-md-6"> -->
+
+           <!--      <div class="panel panel-default">
+                  
+                  <div class="panel-body">
+                    <img class="img-circle center-block" src="./icon/gymprofile.png" id="friend1" height="200" weight="200"></img>
+                    <p class="text-center" id="name1">Name1</p>
+                    <p class="text-center" id="activities">Activities: N/A</p>
+                      <p class="text-center" id="time">Times: N/A</p>
+                </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                  <img class="img-circle center-block" src="./icon/gymprofile.png" id="friend2" height="200" weight="200"></img>
+                   <p class="text-center" id="name3">Name3</p>
+                    <p class="text-center" id="activities">Activities: N/A</p>
+                      <p class="text-center" id="time">Times: N/A</p>
+                </div>
+                </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-body">
+              <img class="img-circle center-block" src="./icon/gymprofile.png" id="friend3" height="200" weight="200"></img>
+               <p class="text-center" id="name2">Name2</p>
+                     <p class="text-center" id="activities">Activities: N/A</p>
+                      <p class="text-center" id="time">Times: N/A</p>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                  <div class="panel-body">
+                  <img class="img-circle center-block" src="./icon/gymprofile.png" id="friend4" height="200" weight="200"></img>
+                   <p class="text-center" id="name4">Name4</p>
+                     <p class="text-center" id="activities">Activities: N/A</p>
+                      <p class="text-center" id="time">Times: N/A</p>
+                </div>
+                </div> -->
+        </div>
+  </div>
+
+
+
+
+</div> <!--/content-->
+
+    </body>
+    </html>
+
