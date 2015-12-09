@@ -1,0 +1,330 @@
+<!-- TODO: Didot isn't working as a class. Needs fixed.-->
+<!-- Plan: All items will be on this page, and their opacity will change depending on which option in the toolbar to the left is chosen -->
+
+
+<html>
+<head>
+
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Chat Room</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Custom CSS 
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- chart.js -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script type="text/javascript">
+       var doughnutData = [
+                {
+                    value: 5,
+                    color:"#185a37",
+                    highlight: "#2e8557",
+                    label: "Dominick"
+                },
+                {
+                    value: 10,
+                    color: "#46BFBD",
+                    highlight: "#5AD3D1",
+                    label: "Caroline"
+                },
+                {
+                    value: 2,
+                    color: "#83adb5",
+                    highlight: "#b4cdd2",
+                    label: "Alane"
+                },
+                {
+                    value: 3,
+                    color: "#853ac5",
+                    highlight: "#865aa5",
+                    label: "Jeff"
+                }
+            ];      
+
+        $(document).ready(function() {
+            $("#logoutButton").click(function()
+{
+localStorage.removeItem("username");
+localStorage.removeItem("password");
+window.location="./home.html";
+});
+
+ $("#improveMatches").click(function() {
+          window.location = "./survey.html";
+        });
+
+ $("#updateProfile").click(function() {
+          window.location = "./dashboard.html";
+        });
+
+
+ $("#viewMatches").click(function() {
+          window.location = "./matches.html";
+        });
+                
+              //  var ctx = document.getElementById("chart-area").getContext("2d");
+             //   window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
+
+
+        });
+
+
+  //    var ctx = $("#myChart").get(0).getContext("2d");
+           
+      function addpoints(x){
+        var points = myDoughnut.getSegmentsAtEvent(x);
+        myDoughnut.segments[0].value=points+1;
+        myDoughnut.update();
+      }
+
+    </script>
+
+
+
+    <style type="text/css">
+
+.toplogo
+{
+    margin:3px 0px 0px 550px;
+    height:110px;
+    width:110px;
+    display: block;
+    float:left;
+    
+}
+
+.navigation{
+    display: inline-block;
+    vertical-align: middle;
+    float:none;
+}
+
+.member
+{
+margin:45px 20px 0px 0px;
+font-family: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+display: block;
+font-size:130%;
+color:white;
+float:right;
+}
+
+.login
+{
+    margin:38px 50px 0px 0px;
+    float:right;
+    height:40px;
+    width:150px;
+    border: 1px solid black;
+}
+
+
+
+.didot
+{
+    font-family: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+    
+}
+
+.menu
+{
+    float:left;
+    width:20%;
+    font-size:130%;
+    padding-top: 20px;
+}
+
+td
+{
+    border: 1px solid black;
+    font-family: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+}
+
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 0;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color:  #00bcd4;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #000 !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    color: #999;
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+.logo,.profile{
+  vertical-align: middle;
+  margin: 0 40px;
+}
+
+body {
+    margin-top:20;
+}
+
+</style>
+
+</head>
+<body>
+
+    
+<div class="content">
+
+<div class="row">
+  <div class="col-md-2">
+      <div class="collapse navbar-collapse navbar-ex1-collapse navigation">
+                <ul class="nav navbar-nav side-nav navigation">
+                    
+                     <li>
+                        
+                        <img class="img-circle profile" border="0" src="./icon/gymprofile.jpg" width="180" height="180" id="profilePic">
+                        
+                    </li>
+
+                    <li>
+                        <a href="#" style="color: white" id="updateProfile"><i class="fa fa-fw fa-dashboard"></i> View Your Profile</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: white" id="improveMatches"><i class="fa fa-fw fa-bar-chart-o"></i> Improve Your Matches</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: white" id="viewMatches"><i class="fa fa-fw fa-table"></i> View Your Matches</a>
+                    </li>
+                                                            <li>
+                        <a href="/message.html" style="color: white" id="boards"><i class="fa fa-fw fa-chat"></i> Chat Room</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: white" id="logoutButton"><i class="fa fa-fw fa-table"></i> Logout</a>
+                    </li>
+                
+                    <li>
+                        
+                        <img class="logo" border="0" src="./icon/SwoleMateIcon.png" width="100" height="100" id="homeButton">
+                        
+                    </li>
+                    
+                </ul>
+
+            </div>
+  </div>
+
+  <div class="col-md-7">
+
+  <h2 class="text-center">Welcome to the Chat Room!</h2>
+  <h3 class="text-center">Chat with other users</h3>
+                <div class="panel panel-default">
+<div class="panel-body">
+  <div style="float:left;width:150px;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y;">
+        <b>Who's Online: </b>
+        <div id="users"></div>
+
+</div>
+
+                  
+                 <div style="float:left;width:500px;height:250px;overflow:scroll-y;padding:10px;">
+        <div id="conversation"></div>
+        <input id="data" style="width:200px;" />
+        <input type="button" id="datasend" value="send" />
+</div>
+     
+</div>
+</div>
+</div> <!--/content-->
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script>
+        var URL = window.location.protocol + "//" + window.location.host;
+        console.log("Connecting to " + URL);
+        var socket = io.connect(URL);
+
+        // on connection to server, ask for user's name with an anonymous callback
+        socket.on('connect', function(){
+                // call the server-side function 'adduser' and send one parameter (value of prompt)
+               // socket.emit('adduser', prompt("What's your name?"));
+               socket.emit('adduser', localStorage.getItem('username'));
+        });
+
+        // listener, whenever the server emits 'updatechat', this updates the chat body
+        socket.on('updatechat', function (username, data) {
+                $('#conversation').append('<b>'+username + ':</b> ' + data + '<br>');
+        });
+
+        // listener, whenever the server emits 'updateusers', this updates the username list
+        socket.on('updateusers', function(data) {
+                $('#users').empty();
+                $.each(data, function(key, value) {
+                        $('#users').append('<div>' + key + '</div>');
+                });
+        });
+
+        // on load of page
+        $(function(){
+                // when the client clicks SEND
+                $('#datasend').click( function() {
+                        var message = $('#data').val();
+                        $('#data').val('');
+                        // tell server to execute 'sendchat' and send along one parameter
+                        socket.emit('sendchat', message);
+                });
+
+                // when the client hits ENTER on their keyboard
+                $('#data').keypress(function(e) {
+                        if(e.which == 13) {
+                                $(this).blur();
+                                $('#datasend').focus().click();
+                        }
+                });
+        });
+
+</script>
+    </body>
+    </html>
+

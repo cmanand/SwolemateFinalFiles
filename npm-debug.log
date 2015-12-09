@@ -1,0 +1,340 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'socket' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.3
+4 verbose install initial load of C:\Users\Lauren\Desktop\Swole\SwoleMate\package.json
+5 verbose installManyTop reading scoped package data from C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\body-parser\package.json
+6 verbose installManyTop reading scoped package data from C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\express\package.json
+7 verbose installManyTop reading scoped package data from C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket.io\package.json
+8 verbose installManyTop reading scoped package data from C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\sqlite3\package.json
+9 info package.json socket.io@1.3.7 No license field.
+10 verbose readDependencies loading dependencies from C:\Users\Lauren\Desktop\Swole\SwoleMate\package.json
+11 silly cache add args [ 'socket', null ]
+12 verbose cache add spec socket
+13 silly cache add parsed spec Result {
+13 silly cache add   raw: 'socket',
+13 silly cache add   scope: null,
+13 silly cache add   name: 'socket',
+13 silly cache add   rawSpec: '',
+13 silly cache add   spec: '*',
+13 silly cache add   type: 'range' }
+14 silly addNamed socket@*
+15 verbose addNamed "*" is a valid semver range for socket
+16 silly addNameRange { name: 'socket', range: '*', hasData: false }
+17 silly mapToRegistry name socket
+18 silly mapToRegistry using default registry
+19 silly mapToRegistry registry https://registry.npmjs.org/
+20 silly mapToRegistry uri https://registry.npmjs.org/socket
+21 verbose addNameRange registry:https://registry.npmjs.org/socket not in flight; fetching
+22 verbose request uri https://registry.npmjs.org/socket
+23 verbose request no auth needed
+24 info attempt registry request try #1 at 2:38:00 PM
+25 verbose request id 9fee48bdbf2c34b5
+26 verbose etag "368QAD6FWDSRRSF0K2VF00IA6"
+27 http request GET https://registry.npmjs.org/socket
+28 http 304 https://registry.npmjs.org/socket
+29 verbose headers { date: 'Wed, 09 Dec 2015 19:37:56 GMT',
+29 verbose headers   via: '1.1 varnish',
+29 verbose headers   'cache-control': 'max-age=60',
+29 verbose headers   etag: '"368QAD6FWDSRRSF0K2VF00IA6"',
+29 verbose headers   age: '0',
+29 verbose headers   connection: 'keep-alive',
+29 verbose headers   'x-served-by': 'cache-atl6235-ATL',
+29 verbose headers   'x-cache': 'MISS',
+29 verbose headers   'x-cache-hits': '0',
+29 verbose headers   'x-timer': 'S1449689876.315713,VS0,VE27',
+29 verbose headers   vary: 'Accept' }
+30 silly get cb [ 304,
+30 silly get   { date: 'Wed, 09 Dec 2015 19:37:56 GMT',
+30 silly get     via: '1.1 varnish',
+30 silly get     'cache-control': 'max-age=60',
+30 silly get     etag: '"368QAD6FWDSRRSF0K2VF00IA6"',
+30 silly get     age: '0',
+30 silly get     connection: 'keep-alive',
+30 silly get     'x-served-by': 'cache-atl6235-ATL',
+30 silly get     'x-cache': 'MISS',
+30 silly get     'x-cache-hits': '0',
+30 silly get     'x-timer': 'S1449689876.315713,VS0,VE27',
+30 silly get     vary: 'Accept' } ]
+31 verbose etag https://registry.npmjs.org/socket from cache
+32 verbose get saving socket to C:\Users\Lauren\AppData\Roaming\npm-cache\registry.npmjs.org\socket\.cache.json
+33 silly addNameRange number 2 { name: 'socket', range: '*', hasData: true }
+34 silly addNameRange versions [ 'socket', [ '0.0.1' ] ]
+35 silly addNamed socket@0.0.1
+36 verbose addNamed "0.0.1" is a plain semver version for socket
+37 silly cache afterAdd socket@0.0.1
+38 verbose afterAdd C:\Users\Lauren\AppData\Roaming\npm-cache\socket\0.0.1\package\package.json not in flight; writing
+39 verbose afterAdd C:\Users\Lauren\AppData\Roaming\npm-cache\socket\0.0.1\package\package.json written
+40 silly install resolved [ { name: 'socket',
+40 silly install resolved     description: 'Socket is a connect clone for simple socket based applications',
+40 silly install resolved     version: '0.0.1',
+40 silly install resolved     author:
+40 silly install resolved      { name: 'Richard S Allinson',
+40 silly install resolved        email: 'rsa@mounitainmansoftware.com' },
+40 silly install resolved     main: 'index',
+40 silly install resolved     engines: { node: '>= 0.6.0 < 0.7.0' },
+40 silly install resolved     dependencies: { microtime: '=0.2.0' },
+40 silly install resolved     repository: { type: 'git', url: 'git://github.com/capecodehq/socket.git' },
+40 silly install resolved     license: 'MIT',
+40 silly install resolved     _npmUser:
+40 silly install resolved      { name: 'mountainmansoftware',
+40 silly install resolved        email: 'npm@mountainmansoftware.com' },
+40 silly install resolved     _id: 'socket@0.0.1',
+40 silly install resolved     devDependencies: {},
+40 silly install resolved     optionalDependencies: {},
+40 silly install resolved     _engineSupported: true,
+40 silly install resolved     _npmVersion: '1.1.0-3',
+40 silly install resolved     _nodeVersion: 'v0.6.9',
+40 silly install resolved     _defaultsLoaded: true,
+40 silly install resolved     dist:
+40 silly install resolved      { shasum: '29ac6549f15a65b19f3444a4178d537a8c161a8b',
+40 silly install resolved        tarball: 'http://registry.npmjs.org/socket/-/socket-0.0.1.tgz' },
+40 silly install resolved     maintainers: [ [Object] ],
+40 silly install resolved     directories: {},
+40 silly install resolved     _shasum: '29ac6549f15a65b19f3444a4178d537a8c161a8b',
+40 silly install resolved     _resolved: 'https://registry.npmjs.org/socket/-/socket-0.0.1.tgz',
+40 silly install resolved     _from: 'socket@*',
+40 silly install resolved     bugs: { url: 'https://github.com/capecodehq/socket/issues' },
+40 silly install resolved     readme: 'ERROR: No README data found!',
+40 silly install resolved     homepage: 'https://github.com/capecodehq/socket#readme' } ]
+41 info install socket@0.0.1 into C:\Users\Lauren\Desktop\Swole\SwoleMate
+42 info installOne socket@0.0.1
+43 verbose installOne of socket to C:\Users\Lauren\Desktop\Swole\SwoleMate not in flight; installing
+44 verbose lock using C:\Users\Lauren\AppData\Roaming\npm-cache\_locks\socket-4e0df75afe16a3cd.lock for C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket
+45 warn engine socket@0.0.1: wanted: {"node":">= 0.6.0 < 0.7.0"} (current: {"node":"4.2.3","npm":"2.14.7"})
+46 silly install write writing socket 0.0.1 to C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket
+47 verbose unbuild node_modules\socket
+48 silly gentlyRm C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket is being purged from base C:\Users\Lauren\Desktop\Swole\SwoleMate
+49 verbose gentlyRm don't care about contents; nuking C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket
+50 verbose tar unpack C:\Users\Lauren\AppData\Roaming\npm-cache\socket\0.0.1\package.tgz
+51 verbose tar unpacking to C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket
+52 silly gentlyRm C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket is being purged
+53 verbose gentlyRm don't care about contents; nuking C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket
+54 silly gunzTarPerm modes [ '777', '666' ]
+55 silly gunzTarPerm extractEntry examples/
+56 silly gunzTarPerm modified mode [ 'examples/', 493, 511 ]
+57 silly gunzTarPerm extractEntry examples/echo-server.js
+58 silly gunzTarPerm modified mode [ 'examples/echo-server.js', 420, 438 ]
+59 silly gunzTarPerm extractEntry examples/simple-test.js
+60 silly gunzTarPerm modified mode [ 'examples/simple-test.js', 420, 438 ]
+61 silly gunzTarPerm extractEntry examples/simple-time-server.js
+62 silly gunzTarPerm modified mode [ 'examples/simple-time-server.js', 420, 438 ]
+63 silly gunzTarPerm extractEntry index.js
+64 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+65 silly gunzTarPerm extractEntry lib/
+66 silly gunzTarPerm modified mode [ 'lib/', 493, 511 ]
+67 silly gunzTarPerm extractEntry lib/index.js
+68 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 438 ]
+69 silly gunzTarPerm extractEntry lib/middleware/
+70 silly gunzTarPerm modified mode [ 'lib/middleware/', 493, 511 ]
+71 silly gunzTarPerm extractEntry lib/middleware/echo.js
+72 silly gunzTarPerm modified mode [ 'lib/middleware/echo.js', 420, 438 ]
+73 silly gunzTarPerm extractEntry lib/middleware/errorHandler.js
+74 silly gunzTarPerm modified mode [ 'lib/middleware/errorHandler.js', 420, 438 ]
+75 silly gunzTarPerm extractEntry lib/middleware/json.js
+76 silly gunzTarPerm modified mode [ 'lib/middleware/json.js', 420, 438 ]
+77 silly gunzTarPerm extractEntry lib/middleware/profiler.js
+78 silly gunzTarPerm modified mode [ 'lib/middleware/profiler.js', 420, 438 ]
+79 silly gunzTarPerm extractEntry lib/proto.js
+80 silly gunzTarPerm modified mode [ 'lib/proto.js', 420, 438 ]
+81 silly gunzTarPerm extractEntry lib/utils.js
+82 silly gunzTarPerm modified mode [ 'lib/utils.js', 420, 438 ]
+83 silly gunzTarPerm extractEntry nbproject/
+84 silly gunzTarPerm modified mode [ 'nbproject/', 493, 511 ]
+85 silly gunzTarPerm extractEntry nbproject/private/
+86 silly gunzTarPerm modified mode [ 'nbproject/private/', 493, 511 ]
+87 silly gunzTarPerm extractEntry nbproject/private/private.properties
+88 silly gunzTarPerm modified mode [ 'nbproject/private/private.properties', 420, 438 ]
+89 silly gunzTarPerm extractEntry nbproject/project.properties
+90 silly gunzTarPerm modified mode [ 'nbproject/project.properties', 420, 438 ]
+91 silly gunzTarPerm extractEntry nbproject/project.xml
+92 silly gunzTarPerm modified mode [ 'nbproject/project.xml', 420, 438 ]
+93 silly gunzTarPerm extractEntry package.json
+94 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+95 silly gunzTarPerm extractEntry scripts/
+96 silly gunzTarPerm modified mode [ 'scripts/', 493, 511 ]
+97 silly gunzTarPerm extractEntry scripts/lint
+98 silly gunzTarPerm modified mode [ 'scripts/lint', 493, 511 ]
+99 verbose write writing to C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\package.json
+100 info preinstall socket@0.0.1
+101 verbose readDependencies loading dependencies from C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\package.json
+102 silly prepareForInstallMany adding microtime@=0.2.0 from socket dependencies
+103 verbose readDependencies loading dependencies from C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\package.json
+104 silly cache add args [ 'microtime@=0.2.0', null ]
+105 verbose cache add spec microtime@=0.2.0
+106 silly cache add parsed spec Result {
+106 silly cache add   raw: 'microtime@=0.2.0',
+106 silly cache add   scope: null,
+106 silly cache add   name: 'microtime',
+106 silly cache add   rawSpec: '=0.2.0',
+106 silly cache add   spec: '0.2.0',
+106 silly cache add   type: 'version' }
+107 silly addNamed microtime@0.2.0
+108 verbose addNamed "0.2.0" is a plain semver version for microtime
+109 silly mapToRegistry name microtime
+110 silly mapToRegistry using default registry
+111 silly mapToRegistry registry https://registry.npmjs.org/
+112 silly mapToRegistry uri https://registry.npmjs.org/microtime
+113 verbose addNameVersion registry:https://registry.npmjs.org/microtime not in flight; fetching
+114 verbose request uri https://registry.npmjs.org/microtime
+115 verbose request no auth needed
+116 info attempt registry request try #1 at 2:38:00 PM
+117 verbose etag "643BDRJSWF8XK731HA0S1NGN2"
+118 http request GET https://registry.npmjs.org/microtime
+119 http 304 https://registry.npmjs.org/microtime
+120 verbose headers { date: 'Wed, 09 Dec 2015 19:37:56 GMT',
+120 verbose headers   via: '1.1 varnish',
+120 verbose headers   'cache-control': 'max-age=60',
+120 verbose headers   etag: '"643BDRJSWF8XK731HA0S1NGN2"',
+120 verbose headers   age: '0',
+120 verbose headers   connection: 'keep-alive',
+120 verbose headers   'x-served-by': 'cache-atl6225-ATL',
+120 verbose headers   'x-cache': 'HIT',
+120 verbose headers   'x-cache-hits': '1',
+120 verbose headers   'x-timer': 'S1449689876.746671,VS0,VE85',
+120 verbose headers   vary: 'Accept' }
+121 silly get cb [ 304,
+121 silly get   { date: 'Wed, 09 Dec 2015 19:37:56 GMT',
+121 silly get     via: '1.1 varnish',
+121 silly get     'cache-control': 'max-age=60',
+121 silly get     etag: '"643BDRJSWF8XK731HA0S1NGN2"',
+121 silly get     age: '0',
+121 silly get     connection: 'keep-alive',
+121 silly get     'x-served-by': 'cache-atl6225-ATL',
+121 silly get     'x-cache': 'HIT',
+121 silly get     'x-cache-hits': '1',
+121 silly get     'x-timer': 'S1449689876.746671,VS0,VE85',
+121 silly get     vary: 'Accept' } ]
+122 verbose etag https://registry.npmjs.org/microtime from cache
+123 verbose get saving microtime to C:\Users\Lauren\AppData\Roaming\npm-cache\registry.npmjs.org\microtime\.cache.json
+124 silly cache afterAdd microtime@0.2.0
+125 verbose afterAdd C:\Users\Lauren\AppData\Roaming\npm-cache\microtime\0.2.0\package\package.json not in flight; writing
+126 verbose afterAdd C:\Users\Lauren\AppData\Roaming\npm-cache\microtime\0.2.0\package\package.json written
+127 silly install resolved [ { name: 'microtime',
+127 silly install resolved     version: '0.2.0',
+127 silly install resolved     description: 'Get the current time in microseconds',
+127 silly install resolved     author:
+127 silly install resolved      { name: 'Wade Simmons',
+127 silly install resolved        email: 'wade@wades.im',
+127 silly install resolved        url: 'http://wades.im/mons' },
+127 silly install resolved     homepage: 'https://github.com/wadey/node-microtime',
+127 silly install resolved     repository:
+127 silly install resolved      { type: 'git',
+127 silly install resolved        url: 'git://github.com/wadey/node-microtime.git' },
+127 silly install resolved     main: './index',
+127 silly install resolved     engines: { node: '>= 0.2.0' },
+127 silly install resolved     scripts: { install: 'node-waf configure build', test: 'node test.js' },
+127 silly install resolved     _npmUser: { name: 'wadey', email: 'wade@wades.im' },
+127 silly install resolved     _id: 'microtime@0.2.0',
+127 silly install resolved     dependencies: {},
+127 silly install resolved     devDependencies: {},
+127 silly install resolved     _engineSupported: true,
+127 silly install resolved     _npmVersion: '1.0.103',
+127 silly install resolved     _nodeVersion: 'v0.4.11',
+127 silly install resolved     _defaultsLoaded: true,
+127 silly install resolved     dist:
+127 silly install resolved      { shasum: '45ee5cb061f9948a3ade221e620d5117a8a2bdb4',
+127 silly install resolved        tarball: 'http://registry.npmjs.org/microtime/-/microtime-0.2.0.tgz' },
+127 silly install resolved     maintainers: [ [Object] ],
+127 silly install resolved     directories: {},
+127 silly install resolved     _shasum: '45ee5cb061f9948a3ade221e620d5117a8a2bdb4',
+127 silly install resolved     _resolved: 'https://registry.npmjs.org/microtime/-/microtime-0.2.0.tgz',
+127 silly install resolved     _from: 'microtime@0.2.0',
+127 silly install resolved     bugs: { url: 'https://github.com/wadey/node-microtime/issues' },
+127 silly install resolved     readme: 'ERROR: No README data found!' } ]
+128 info install microtime@0.2.0 into C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket
+129 info installOne microtime@0.2.0
+130 verbose installOne of microtime to C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket not in flight; installing
+131 verbose lock using C:\Users\Lauren\AppData\Roaming\npm-cache\_locks\microtime-bdc8cef4e411ac3e.lock for C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime
+132 silly install write writing microtime 0.2.0 to C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime
+133 verbose unbuild node_modules\socket\node_modules\microtime
+134 silly gentlyRm C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime is being purged from base C:\Users\Lauren\Desktop\Swole\SwoleMate
+135 verbose gentlyRm don't care about contents; nuking C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime
+136 verbose tar unpack C:\Users\Lauren\AppData\Roaming\npm-cache\microtime\0.2.0\package.tgz
+137 verbose tar unpacking to C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime
+138 silly gentlyRm C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime is being purged
+139 verbose gentlyRm don't care about contents; nuking C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime
+140 silly gunzTarPerm modes [ '777', '666' ]
+141 silly gunzTarPerm extractEntry index.js
+142 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+143 silly gunzTarPerm extractEntry LICENSE
+144 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+145 silly gunzTarPerm extractEntry package.json
+146 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+147 silly gunzTarPerm extractEntry README.md
+148 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+149 silly gunzTarPerm extractEntry test.js
+150 silly gunzTarPerm modified mode [ 'test.js', 420, 438 ]
+151 silly gunzTarPerm extractEntry wscript
+152 silly gunzTarPerm modified mode [ 'wscript', 420, 438 ]
+153 silly gunzTarPerm extractEntry src/microtime.cc
+154 silly gunzTarPerm modified mode [ 'src/microtime.cc', 420, 438 ]
+155 verbose write writing to C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime\package.json
+156 info preinstall microtime@0.2.0
+157 verbose readDependencies loading dependencies from C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime\package.json
+158 verbose readDependencies loading dependencies from C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime\package.json
+159 silly install resolved []
+160 verbose about to build C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime
+161 info build C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime
+162 info linkStuff microtime@0.2.0
+163 silly linkStuff microtime@0.2.0 has C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules as its parent node_modules
+164 verbose linkBins microtime@0.2.0
+165 verbose linkMans microtime@0.2.0
+166 verbose rebuildBundles microtime@0.2.0
+167 info install microtime@0.2.0
+168 verbose unsafe-perm in lifecycle true
+169 info microtime@0.2.0 Failed to exec install script
+170 verbose unlock done using C:\Users\Lauren\AppData\Roaming\npm-cache\_locks\microtime-bdc8cef4e411ac3e.lock for C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime
+171 verbose about to build C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket
+172 verbose unlock done using C:\Users\Lauren\AppData\Roaming\npm-cache\_locks\socket-4e0df75afe16a3cd.lock for C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket
+173 verbose stack Error: microtime@0.2.0 install: `node-waf configure build`
+173 verbose stack Exit status 1
+173 verbose stack     at EventEmitter.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\lib\utils\lifecycle.js:214:16)
+173 verbose stack     at emitTwo (events.js:87:13)
+173 verbose stack     at EventEmitter.emit (events.js:172:7)
+173 verbose stack     at ChildProcess.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+173 verbose stack     at emitTwo (events.js:87:13)
+173 verbose stack     at ChildProcess.emit (events.js:172:7)
+173 verbose stack     at maybeClose (internal/child_process.js:818:16)
+173 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+174 verbose pkgid microtime@0.2.0
+175 verbose cwd C:\Users\Lauren\Desktop\Swole\SwoleMate
+176 error Windows_NT 6.1.7601
+177 error argv "C:\\Program Files (x86)\\nodejs\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "socket"
+178 error node v4.2.3
+179 error npm  v2.14.7
+180 error code ELIFECYCLE
+181 error microtime@0.2.0 install: `node-waf configure build`
+181 error Exit status 1
+182 error Failed at the microtime@0.2.0 install script 'node-waf configure build'.
+182 error This is most likely a problem with the microtime package,
+182 error not with npm itself.
+182 error Tell the author that this fails on your system:
+182 error     node-waf configure build
+182 error You can get their info via:
+182 error     npm owner ls microtime
+182 error There is likely additional logging output above.
+183 verbose exit [ 1, true ]
+184 verbose unbuild node_modules\socket\node_modules\microtime
+185 info preuninstall microtime@0.2.0
+186 info uninstall microtime@0.2.0
+187 verbose unbuild rmStuff microtime@0.2.0 from C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules
+188 verbose unbuild rmStuff in C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules
+189 info postuninstall microtime@0.2.0
+190 silly gentlyRm C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime is being purged from base C:\Users\Lauren\Desktop\Swole\SwoleMate
+191 verbose gentlyRm don't care about contents; nuking C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime
+192 silly vacuum-fs purging C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules\microtime
+193 silly vacuum-fs removing C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket\node_modules
+194 silly vacuum-fs quitting because other entries in C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket
+195 verbose unbuild node_modules\socket
+196 info preuninstall socket@0.0.1
+197 info uninstall socket@0.0.1
+198 verbose unbuild rmStuff socket@0.0.1 from C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules
+199 info postuninstall socket@0.0.1
+200 silly gentlyRm C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket is being purged from base C:\Users\Lauren\Desktop\Swole\SwoleMate
+201 verbose gentlyRm don't care about contents; nuking C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket
+202 silly vacuum-fs purging C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules\socket
+203 silly vacuum-fs quitting because other entries in C:\Users\Lauren\Desktop\Swole\SwoleMate\node_modules

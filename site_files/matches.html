@@ -35,30 +35,24 @@
 $(document).ready(function() {
    var user;
    var info = [];
-
   $(document).ajaxError(function() {
     alert("Sorry, there was a problem!");
   }); //end ajax error check
-
-
   $("#logoutButton").click(function()
 {
 localStorage.removeItem("username");
 localStorage.removeItem("password");
 window.location="./home.html";
 });//end logout
-
  $("#improveMatches").click(function() {
           window.location = "./survey.html";
         });
 $("#viewMatches").click(function() {
           window.location = "./matches.html";
         });
-
 $("#updateProfile").click(function() {
           window.location = "./dashboard.html";
         });
-
       $.ajax({
       url: "/matches/",
       type: "POST",
@@ -85,7 +79,6 @@ $("#updateProfile").click(function() {
          var panelbody = document.createElement('div');
          panelbody.className = 'panel-body';
          list.appendChild(panelbody);
-
           var pic = document.createElement('img');
           pic.src = "./icon/gymprofile.png";
           pic.id = "friend";
@@ -93,19 +86,16 @@ $("#updateProfile").click(function() {
           pic.weight = "200";
           pic.className = "img-circle center-block";
            list.appendChild(pic);
-
           var name = document.createElement('p');
           name.id = "name";
           name.className = "text-center";
           name.innerHTML = data.usernames[i];
           list.appendChild(name);
-
           var activities = document.createElement('p');
           activities.id = "activities";
           activities.className = "text-center";
           activities.innerHTML = "Activities: N/A";
           list.appendChild(activities);
-
           var time = document.createElement('p');
           time.id = "time";
           time.className = "text-center";
@@ -116,37 +106,8 @@ $("#updateProfile").click(function() {
       
               
   }//end function
-
   }); //end ajax
-
  }); //end ready
-
-
-// function placeUsernames(username)
-//     {
-//       console.log("HI");
-//  if(username.length>=1)
-//       {
-//       var a = username[0];
-//         document.getElementById("name1").innerHTML=a;
-//       }
-//       if(username.length>1)
-//       {
-//       var b = username[1];
-//     document.getElementById("name2").innerHTML=b;
-//   }
-//       if(username.length>2)
-//       {
-//       var c = username[2];
-//     document.getElementById("name3").innerHTML=c;
-//   }
-//      if(username.length>3)
-//       {
-//       var d = username[3];
-//     document.getElementById("name4").innerHTML=d;
-//   }
-//     }
-
 </script>
 
     <style type="text/css">
@@ -281,9 +242,13 @@ td
                     <li>
                         <a href="#" style="color: white" id="viewMatches"><i class="fa fa-fw fa-table"></i> View Your Matches</a>
                     </li>
+                                                                                <li>
+                        <a href="/message.html" style="color: white" id="boards"><i class="fa fa-fw fa-chat"></i> Chat Room</a>
+                    </li>
                     <li>
                         <a href="#" style="color: white" id="logoutButton"><i class="fa fa-fw fa-table"></i> Logout</a>
                     </li>
+
                 
                     <li>
                         
@@ -301,10 +266,9 @@ td
     <h1>View Your Matches</h1>
 
   <div class="square">
-    <div id="matchList"></div>
-          <!-- <div class="col-md-6"> -->
+          <div class="col-md-6">
 
-           <!--      <div class="panel panel-default">
+                <div class="panel panel-default">
                   
                   <div class="panel-body">
                     <img class="img-circle center-block" src="./icon/gymprofile.png" id="friend1" height="200" weight="200"></img>
@@ -341,7 +305,7 @@ td
                      <p class="text-center" id="activities">Activities: N/A</p>
                       <p class="text-center" id="time">Times: N/A</p>
                 </div>
-                </div> -->
+                </div>
         </div>
   </div>
 

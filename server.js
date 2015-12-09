@@ -6,14 +6,61 @@
 //   npm install express
 //   npm install body-parser
 //   npm install sqlite3
+//   npm install socket
 
 
 
 
 //TODO: make emails unique (currently only usernnames are unique)
-
+var port= 1111;
 var express = require('express');
 var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
+
+server.listen(port);
+console.log('Server started at http://localhost:%s/', port);
+
+
+app.get('/message.html', function (req, res) {
+  res.sendfile(__dirname + '/site_files/message.html')
+ console.log("hey");
+});
+
+var usernames = {};
+
+io.sockets.on('connection', function (socket) {
+
+  // when the client emits 'sendchat', this listens and executes
+  socket.on('sendchat', function (data) {
+    // we tell the client to execute 'updatechat' with 2 parameters
+    io.sockets.emit('updatechat', socket.username, data);
+  });
+
+  // when the client emits 'adduser', this listens and executes
+  socket.on('adduser', function(username){
+    // we store the username in the socket session for this client
+    socket.username = username;
+    // add the client's username to the global list
+    usernames[username] = username;
+    // echo to client they've connected
+   socket.emit('updatechat', 'Server', 'you have connected');
+    // echo globally (all clients) that a person has connected
+    socket.broadcast.emit('updatechat', 'Server', username + ' has connected');
+    // update the list of users in chat, client-side
+    io.sockets.emit('updateusers', usernames);
+  });
+
+  // when the user disconnects.. perform this
+  socket.on('disconnect', function(){
+    // remove the username from global usernames list
+    delete usernames[socket.username];
+    // update list of users in chat, client-side
+    io.sockets.emit('updateusers', usernames);
+    // echo globally that this client has left
+    socket.broadcast.emit('updatechat', 'Server', socket.username + ' has disconnected');
+  });
+});
 
 // required to support parsing of POST request bodies
 var bodyParser = require('body-parser');
@@ -37,6 +84,7 @@ db.serialize(function() {
 });
 
 
+app.use(express.static('site_files'));
 
 // CREATE a new user
 app.post('/users', function (req, res) {
@@ -180,7 +228,6 @@ db.each("SELECT * FROM users WHERE username = '"+username+"'", function(err, row
     }else{
       nonuserActivities.push(rowstwo);
     }
-
     },
   function(err, comp){
      console.log(comp);  //comp = activitiesArray
@@ -198,7 +245,6 @@ db.each("SELECT * FROM users WHERE username = '"+username+"'", function(err, row
   res.send({usernames: usernamesArray});
   });
    } 
-
   });
 
 //do the two arrays share a number in common
@@ -218,8 +264,8 @@ return "no";
 
 
 // start the server on http://localhost:1111/
-var server = app.listen(1111, function () {
-  var port = server.address().port;
-  console.log('Server started at http://localhost:%s/', port);
-});
+//var server = app.listen(1111, function () {
+  //var port = server.address().port;
+  //console.log('Server started at http://localhost:%s/', port);
+//});
 
