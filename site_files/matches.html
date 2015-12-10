@@ -62,6 +62,8 @@ $("#updateProfile").click(function() {
         //   newRow.className='col-md-6';
         //   list.appendChild(newRow);
         // } //end if
+        if(data.activities[i]!="") //a check just to make sure we don't make a poor match if the server sends us something weird
+        {
          var panel = document.createElement('div');
          panel.className = "panel panel-default"
           list.appendChild(panel);
@@ -78,19 +80,61 @@ $("#updateProfile").click(function() {
           var name = document.createElement('p');
           name.id = "name";
           name.className = "text-center";
-          name.innerHTML = data.usernames[i];
+          name.innerHTML = "<strong>"+data.usernames[i]+"</strong>";
           list.appendChild(name);
           var activities = document.createElement('p');
           activities.id = "activities";
           activities.className = "text-center";
-          activities.innerHTML = "Activities: N/A";
+          activities.innerHTML = "<strong>Activities:</strong> "+data.activities[i];
           list.appendChild(activities);
           var time = document.createElement('p');
           time.id = "time";
           time.className = "text-center";
-         time.innerHTML = "Times: N/A";
+          time.innerHTML = "<strong>Same Availability:</strong>"
+          if(data.monday[i]!=""&&data.monday[i]!="none")
+          {
+          var monday = document.createElement('p');
+          monday.innerHTML = "Monday: "+data.monday[i];
+          time.appendChild(monday);
+        }
+         if(data.tuesday[i]!=""&&data.tuesday[i]!="none")
+          {
+          var tuesday = document.createElement('p');
+          tuesday.innerHTML = "Tuesday: "+data.tuesday[i];
+          time.appendChild(tuesday);
+        }
+        if(data.wednesday[i]!=""&&data.wednesday[i]!="none")
+          {
+          var wednesday= document.createElement('p');
+          wednesday.innerHTML = "Wednesday: "+data.wednesday[i];
+          time.appendChild(wednesday);
+        }
+          if(data.thursday[i]!=""&&data.thursday[i]!="none")
+          {
+          var thursday= document.createElement('p');
+          thursday.innerHTML = "Thursday: "+data.thursday[i];
+          time.appendChild(thursday);
+        }
+          if(data.friday[i]!=""&&data.friday[i]!="none")
+          {
+          var friday= document.createElement('p');
+          friday.innerHTML = "Friday: "+data.friday[i];
+          time.appendChild(friday);
+        }
+          if(data.saturday[i]!=""&&data.saturday[i]!="none")
+          {
+          var saturday= document.createElement('p');
+          saturday.innerHTML = "Saturday: "+data.saturday[i];
+          time.appendChild(saturday);
+        }
+          if(data.sunday[i]!=""&&data.sunday[i]!="none")
+          {
+          var sunday= document.createElement('p');
+          sunday.innerHTML = "Sunday: "+data.sunday[i];
+          time.appendChild(sunday);
+        }
          list.appendChild(time);
-          
+        }// end if 
         } //end for
       
               

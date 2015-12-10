@@ -167,7 +167,7 @@ app.put('/survey/', function (req, res) {
    var wednesday = postBody.wednesday;
    var thursday = postBody.thursday;
    var friday = postBody.friday;
-   var saturday = postBody.satday;
+   var saturday = postBody.saturday;
    var sunday = postBody.sunday;
     var highest = postBody.highest;
     var spotting = postBody.spotting;
@@ -203,7 +203,7 @@ app.post('/matches/', function (req, res) {
   var postBody = req.body;
  // &&SELECT activities FROM users WHERE username!='"+username+"'
  var username=postBody.username;
- var nonuserActivities = [];
+ var nonuserInfo = [];
 db.each("SELECT * FROM users WHERE username = '"+username+"'", function(err, rows){
     if(!rows){
       res.send("error, no user");
@@ -220,29 +220,53 @@ db.each("SELECT * FROM users WHERE username = '"+username+"'", function(err, row
          var sundayArray=rows.sunday.split(',');
          console.log(activitiesArray);
          
-      db.each("SELECT username, activities FROM users WHERE username!='"+username+"'", function(err, rowstwo){
+      db.each("SELECT username, activities, monday, tuesday, wednesday, thursday, friday, saturday, sunday FROM users WHERE username!='"+username+"'", function(err, rowstwo){
     if(!rowstwo){
       console.log("nothin");
       res.send("error");
       return;
     }else{
-      nonuserActivities.push(rowstwo);
+      nonuserInfo.push(rowstwo);
     }
     },
   function(err, comp){
      console.log(comp);  //comp = activitiesArray
     var usernamesArray=[];
+    var sameActivities=[];
+    var sameMonday=[];
+    var sameTuesday=[];
+    var sameWednesday=[];
+    var sameThursday=[];
+    var sameFriday=[];
+    var sameSaturday=[];
+    var sameSunday=[];
     //if any of the users share an activity with the loggedIn user, push that user's username into usernamesArray (these are the loggedIn user's matches)
-    for(var y = 0; y<nonuserActivities.length; y++)
+    for(var y = 0; y<nonuserInfo.length; y++)
     {
-      var array = nonuserActivities[y].activities.split(',');
-      if(compareArray(array, activitiesArray)=="yes"){
-        usernamesArray.push(nonuserActivities[y].username);
+      var nonuseractivitiesarray = nonuserInfo[y].activities.split(',');
+      var nonusermonday = nonuserInfo[y].monday.split(',');
+      var nonusertuesday = nonuserInfo[y].tuesday.split(',');
+      var nonuserwednesday = nonuserInfo[y].wednesday.split(',');
+      var nonuserthursday = nonuserInfo[y].thursday.split(',');
+      var nonuserfriday = nonuserInfo[y].friday.split(',');
+      var nonusersaturday = nonuserInfo[y].saturday.split(',');
+      var nonusersunday = nonuserInfo[y].sunday.split(',');
+
+      if((compareArray(nonuseractivitiesarray, activitiesArray)=="yes")&&(compareArray(nonusermonday, mondayArray)=="yes"||compareArray(nonusertuesday, tuesdayArray)=="yes"||compareArray(nonuserwednesday, wednesdayArray)=="yes"||compareArray(nonuserthursday, thursdayArray)=="yes"||compareArray(nonuserfriday, fridayArray)=="yes"||compareArray(nonusersaturday, saturdayArray)=="yes")||compareArray(nonusersunday, sundayArray)=="yes"){
+        usernamesArray.push(nonuserInfo[y].username);
+        sameActivities.push(findSame(nonuseractivitiesarray, activitiesArray));
+        sameMonday.push(findSame(nonusermonday, mondayArray));
+        sameTuesday.push(findSame(nonusertuesday, tuesdayArray));
+        sameWednesday.push(findSame(nonuserwednesday, wednesdayArray));
+        sameThursday.push(findSame(nonuserthursday, thursdayArray));
+        sameFriday.push(findSame(nonuserfriday, fridayArray));
+        sameSaturday.push(findSame(nonusersaturday, saturdayArray));
+        sameSunday.push(findSame(nonusersunday, sundayArray));
       }
     }
    
   console.log('sending from server');
-  res.send({usernames: usernamesArray});
+  res.send({usernames: usernamesArray, activities: sameActivities, monday:sameMonday, tuesday:sameTuesday, wednesday:sameWednesday, thursday:sameThursday, friday:sameFriday, saturday:sameSaturday, sunday:sameSunday});
   });
    } 
   });
@@ -259,6 +283,24 @@ function compareArray(arrOne, arrTwo)
   }
 return "no";
 }
+
+function findSame(arrOne, arrTwo)
+{
+  var same="";
+ for(var i = 0; i<arrOne.length; i++)
+  for(var j = 0; j<arrTwo.length; j++)
+  {
+    if(arrOne[i]==arrTwo[j]){
+      if(same=="")
+      same = same + arrOne[i];
+    else
+       same = same +", "+ arrOne[i];
+    }
+  }
+
+return same;
+}
+
 });
 
 

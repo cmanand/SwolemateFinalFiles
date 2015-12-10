@@ -203,7 +203,7 @@ $(document).ready(function () {
           var answersWednesday = answersStr('wednesday');
            var answersThursday = answersStr('thursday');
            var answersFriday = answersStr('friday');
-           var answersSaturday = answersStr('satday');
+           var answersSaturday = answersStr('saturday');
            var answersSunday = answersStr('sunday');
       var answersCardioact = answersStr('cardioact');
       var answersCardiopartner = answersStr('cardiopartner');
@@ -271,8 +271,9 @@ $(document).ready(function () {
           res.send(data);
         }
       },
-    });
-});
+    }); // end ajax
+window.location="./matches.html";
+}); //end submit onclick
 
 
 function answersStr(name)
@@ -587,100 +588,100 @@ return vals;
     <tbody>
       <tr>
         <td class="active">Monday</td>
-        <td><input type="checkbox" name="monday" value="0" ></td>
-        <td><input type="checkbox" name="monday" value="1"></td>
-        <td><input type="checkbox" name="monday" value="2"></td>
-        <td><input type="checkbox" name="monday" value="3"> </td>
-        <td> <input type="checkbox" name="monday" value="4"></td>
-        <td><input type="checkbox" name="monday" value="5"> </td>
-        <td><input type="checkbox" name="monday" value="6"> </td>
-        <td><input type="checkbox" name="monday" value="7"> </td>
-        <td> <input type="checkbox" name="monday" value="8"> </td>
-        <td><input type="checkbox" name="monday" value="9"> </td>
+        <td><input type="checkbox" name="monday" value="none" ></td>
+        <td><input type="checkbox" name="monday" value="6:30am-8am"></td>
+        <td><input type="checkbox" name="monday" value="8am-10am"></td>
+        <td><input type="checkbox" name="monday" value="10am-12pm"> </td>
+        <td> <input type="checkbox" name="monday" value="12pm-2pm"></td>
+        <td><input type="checkbox" name="monday" value="2pm-4pm"> </td>
+        <td><input type="checkbox" name="monday" value="4pm-6pm"> </td>
+        <td><input type="checkbox" name="monday" value="6pm-8pm"> </td>
+        <td> <input type="checkbox" name="monday" value="8pm-10pm"> </td>
+        <td><input type="checkbox" name="monday" value="10pm-11pm"> </td>
       </tr>
 
       <tr>
         <td class="active">Tuesday</td>
-        <td><input type="checkbox" name="tuesday" value="0" ></td>
-        <td><input type="checkbox" name="tuesday" value="1"></td>
-        <td><input type="checkbox" name="tuesday" value="2"></td>
-        <td><input type="checkbox" name="tuesday" value="3"> </td>
-        <td> <input type="checkbox" name="tuesday" value="4"></td>
-        <td><input type="checkbox" name="tuesday" value="5"> </td>
-        <td><input type="checkbox" name="tuesday" value="6"> </td>
-        <td><input type="checkbox" name="tuesday" value="7"> </td>
-        <td> <input type="checkbox" name="tuesday" value="8"> </td>
-        <td><input type="checkbox" name="tuesday" value="9"> </td>
+        <td><input type="checkbox" name="tuesday" value="none" ></td>
+        <td><input type="checkbox" name="tuesday" value="6:30am-8am"></td>
+        <td><input type="checkbox" name="tuesday" value="8am-10am"></td>
+        <td><input type="checkbox" name="tuesday" value="10am-12pm"> </td>
+        <td> <input type="checkbox" name="tuesday" value="12pm-2pm"></td>
+        <td><input type="checkbox" name="tuesday" value="2pm-4pm"> </td>
+        <td><input type="checkbox" name="tuesday" value="4pm-6pm"> </td>
+        <td><input type="checkbox" name="tuesday" value="6pm-8pm"> </td>
+        <td> <input type="checkbox" name="tuesday" value="8pm-10pm"> </td>
+        <td><input type="checkbox" name="tuesday" value="10pm-11pm"> </td>
       </tr>
 
       <tr>
         <td class="active">Wednesday</td>
-        <td><input type="checkbox" name="wednesday" value="0" ></td>
-        <td><input type="checkbox" name="wednesday" value="1"></td>
-        <td><input type="checkbox" name="wednesday" value="2"></td>
-        <td><input type="checkbox" name="wednesday" value="3"> </td>
-        <td> <input type="checkbox" name="wednesday" value="4"></td>
-        <td><input type="checkbox" name="wednesday" value="5"> </td>
-        <td><input type="checkbox" name="wednesday" value="6"> </td>
-        <td><input type="checkbox" name="wednesday" value="7"> </td>
-        <td> <input type="checkbox" name="wednesday" value="8"> </td>
-        <td><input type="checkbox" name="wednesday" value="9"> </td>
+        <td><input type="checkbox" name="wednesday" value="none" ></td>
+        <td><input type="checkbox" name="wednesday" value="6:30am-8am"></td>
+        <td><input type="checkbox" name="wednesday" value="8am-10am"></td>
+        <td><input type="checkbox" name="wednesday" value="10am-12pm"> </td>
+        <td> <input type="checkbox" name="wednesday" value="12pm-2pm"></td>
+        <td><input type="checkbox" name="wednesday" value="2pm-4pm"> </td>
+        <td><input type="checkbox" name="wednesday" value="4pm-6pm"> </td>
+        <td><input type="checkbox" name="wednesday" value="6pm-8pm"> </td>
+        <td> <input type="checkbox" name="wednesday" value="8pm-10pm"> </td>
+        <td><input type="checkbox" name="wednesday" value="10pm-11pm"> </td>
       </tr>
 
       <tr>
         <td class="active">Thursday</td>
-        <td><input type="checkbox" name="thursday" value="0" ></td>
-        <td><input type="checkbox" name="thursday" value="1"></td>
-        <td><input type="checkbox" name="thursday" value="2"></td>
-        <td><input type="checkbox" name="thursday" value="3"> </td>
-        <td> <input type="checkbox" name="thursday" value="4"></td>
-        <td><input type="checkbox" name="thursday" value="5"> </td>
-        <td><input type="checkbox" name="thursday" value="6"> </td>
-        <td><input type="checkbox" name="thursday" value="7"> </td>
-        <td> <input type="checkbox" name="thursday" value="8"> </td>
-        <td><input type="checkbox" name="thursday" value="9"> </td>
+        <td><input type="checkbox" name="thursday" value="none" ></td>
+        <td><input type="checkbox" name="thursday" value="6:30am-8am"></td>
+        <td><input type="checkbox" name="thursday" value="8am-10am"></td>
+        <td><input type="checkbox" name="thursday" value="10am-12pm"> </td>
+        <td> <input type="checkbox" name="thursday" value="12pm-2pm"></td>
+        <td><input type="checkbox" name="thursday" value="2pm-4pm"> </td>
+        <td><input type="checkbox" name="thursday" value="4pm-6pm"> </td>
+        <td><input type="checkbox" name="thursday" value="6pm-8pm"> </td>
+        <td> <input type="checkbox" name="thursday" value="8pm-10pm"> </td>
+        <td><input type="checkbox" name="thursday" value="10pm-11pm"> </td>
       </tr>
 
       <tr>
         <td class="active">Friday</td>
-        <td><input type="checkbox" name="friday" value="0" ></td>
-        <td><input type="checkbox" name="friday" value="1"></td>
-        <td><input type="checkbox" name="friday" value="2"></td>
-        <td><input type="checkbox" name="friday" value="3"> </td>
-        <td> <input type="checkbox" name="friday" value="4"></td>
-        <td><input type="checkbox" name="friday" value="5"> </td>
-        <td><input type="checkbox" name="friday" value="6"> </td>
-        <td><input type="checkbox" name="friday" value="7"> </td>
+        <td><input type="checkbox" name="friday" value="none" ></td>
+        <td><input type="checkbox" name="friday" value="6:30am-8am"></td>
+        <td><input type="checkbox" name="friday" value="8am-10am"></td>
+        <td><input type="checkbox" name="friday" value="10am-12pm"> </td>
+        <td> <input type="checkbox" name="friday" value="12pm-2pm"></td>
+        <td><input type="checkbox" name="friday" value="2pm-4pm"> </td>
+        <td><input type="checkbox" name="friday" value="4pm-6pm"> </td>
+        <td><input type="checkbox" name="friday" value="6pm-8pm"> </td>
         <td> Gym not open </td>
         <td> Gym not open </td>
       </tr>
 
       <tr>
         <td class="active">Saturday</td>
-        <td><input type="checkbox" name="saturday" value="0" ></td>
+        <td><input type="checkbox" name="saturday" value="none" ></td>
         <td> Gym not open </td>
-        <td><input type="checkbox" name="saturday" value="2"></td>
-        <td><input type="checkbox" name="saturday" value="3"> </td>
-        <td> <input type="checkbox" name="saturday" value="4"></td>
-        <td><input type="checkbox" name="saturday" value="5"> </td>
-        <td><input type="checkbox" name="saturday" value="6"> </td>
-        <td><input type="checkbox" name="saturday" value="7"> </td>
+        <td><input type="checkbox" name="saturday" value="8am-10am"></td>
+        <td><input type="checkbox" name="saturday" value="10am-12pm"> </td>
+        <td> <input type="checkbox" name="saturday" value="12pm-2pm"></td>
+        <td><input type="checkbox" name="saturday" value="2pm-4pm"> </td>
+        <td><input type="checkbox" name="saturday" value="4pm-6pm"> </td>
+        <td><input type="checkbox" name="saturday" value="6pm-8pm"> </td>
         <td> Gym not open </td>
         <td> Gym not open </td>
       </tr>
 
       <tr>
         <td class="active">Sunday</td>
-        <td><input type="checkbox" name="sunday" value="0" ></td>
+        <td><input type="checkbox" name="sunday" value="none" ></td>
         <td> Gym not open </td>
-        <td><input type="checkbox" name="sunday" value="2"></td>
-        <td><input type="checkbox" name="sunday" value="3"> </td>
-        <td> <input type="checkbox" name="sunday" value="4"></td>
-        <td><input type="checkbox" name="sunday" value="5"> </td>
-        <td><input type="checkbox" name="sunday" value="6"> </td>
-        <td><input type="checkbox" name="sunday" value="7"> </td>
-        <td> <input type="checkbox" name="sunday" value="8"> </td>
-        <td><input type="checkbox" name="sunday" value="9"> </td>
+        <td><input type="checkbox" name="sunday" value="8am-10am"></td>
+        <td><input type="checkbox" name="sunday" value="10am-12pm"> </td>
+        <td> <input type="checkbox" name="sunday" value="12pm-2pm"></td>
+        <td><input type="checkbox" name="sunday" value="2pm-4pm"> </td>
+        <td><input type="checkbox" name="sunday" value="4pm-6pm"> </td>
+        <td><input type="checkbox" name="sunday" value="6pm-8pm"> </td>
+        <td> <input type="checkbox" name="sunday" value="8pm-10pm"> </td>
+        <td><input type="checkbox" name="sunday" value="10pm-11pm"> </td>
       </tr>
       
     </tbody>
@@ -836,7 +837,7 @@ What experience level(s) do you want your partner to have?<br>
 
 
 </p>
-      <input type="submit" value="Submit" id="submit">
+      <center><input type="submit" value="Submit" id="submit"></center>
 </form>
 
     </div>
